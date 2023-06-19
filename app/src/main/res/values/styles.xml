@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="create_an_a">
+        <item name="android:textSize">8sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="getting_sta">
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="as">
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="student">
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:textColor">#075805</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+
+
+</resources>
