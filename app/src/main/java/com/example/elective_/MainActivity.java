@@ -1,6 +1,5 @@
 package com.example.elective_;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,15 +11,7 @@ import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -44,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         Button gettingstarted=(Button)findViewById(R.id.getting_started);
-        Button student=(Button)findViewById(R.id.student);
+        Button choice=(Button)findViewById(R.id.choice);
+
 
 
 
@@ -101,31 +93,42 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 //                view.setBackgroundResource(R.drawable.rectangle_2_);
 
-                Intent i=new Intent(getApplicationContext(),student_login.class);
-                startActivity(i);
-
-                if(student.getText().equals("Student"))
+                if(choice.getText().equals("Student"))
                 {
                     Toast.makeText(MainActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
+                    Intent i=new Intent(getApplicationContext(), student_login.class);
+                    startActivity(i);
+                } else if (choice.getText().equals("Admin")) {
+                    Intent i=new Intent(getApplicationContext(),adminlogin.class);
+                    startActivity(i);
+
+                } else if (choice.getText().equals("Teacher")) {
+                    {
+                        Intent i=new Intent(getApplicationContext(), teacherlogin.class);
+                        startActivity(i);
+                    }
+
 
                 }
+
+
             }
         });
 
 
 
-        student.setOnClickListener(new View.OnClickListener() {
+        choice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.setBackgroundResource(R.drawable.rectangle_4_);
-                PopupMenu popupMenu=new PopupMenu(getApplicationContext(),student);
+                PopupMenu popupMenu=new PopupMenu(getApplicationContext(),choice);
 
                 popupMenu.getMenuInflater().inflate(R.menu.as_menu,popupMenu.getMenu());
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
-                       student.setText(menuItem.getTitle());
-                       student.setBackgroundResource(R.drawable.rectangle_4);
+                        choice.setText(menuItem.getTitle());
+                        choice.setBackgroundResource(R.drawable.rectangle_4);
                        return true;
                     }
                 });

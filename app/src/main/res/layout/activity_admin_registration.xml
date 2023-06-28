@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin_registration"
+    android:background="@drawable/adminimg"
+    >
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/adminwelcome"
+        android:layout_marginTop="80sp"
+        />
+
+
+    <EditText
+        android:id="@+id/entercollage"
+        android:layout_width="300sp"
+        android:layout_height="45sp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:inputType="text"
+        android:singleLine="true"
+        android:drawableStart="@drawable/baseline_school_24"
+        android:drawablePadding="10dp"
+        android:layout_alignTop="@+id/welcome"
+        android:hint="Enter Collage Name"
+        android:textSize="23dp"
+        android:background="@drawable/edit"
+        />
+
+
+
+
+
+    <EditText
+        android:id="@+id/enteremail"
+        android:layout_width="300sp"
+        android:layout_height="45sp"
+        android:padding="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/entercollage"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:drawableStart="@drawable/baseline_alternate_email_24"
+        android:drawablePadding="10dp"
+        android:hint="Enter Email"
+        android:textSize="23dp"
+        android:background="@drawable/edit"
+        />
+
+    <EditText
+        android:id="@+id/enterpassword"
+        android:layout_width="300sp"
+        android:layout_height="45sp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:inputType="text"
+        android:singleLine="true"
+        android:drawableStart="@drawable/baseline_lock_24"
+        android:drawablePadding="10dp"
+        android:layout_alignTop="@+id/enteremail"
+        android:hint="Enter Password"
+        android:textSize="23dp"
+        android:background="@drawable/edit"
+        />
+
+    <EditText
+        android:id="@+id/enterConfirmpassword"
+        android:layout_width="300sp"
+        android:layout_height="45sp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:inputType="text"
+        android:singleLine="true"
+        android:drawableStart="@drawable/baseline_lock_24"
+        android:drawablePadding="10dp"
+        android:layout_alignTop="@+id/enterpassword"
+        android:hint="Confirm Password"
+        android:textSize="23dp"
+        android:background="@drawable/edit"
+        />
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/registeraccount"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="120sp"
+
+        android:background="@drawable/rectangle_2"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Register Collage"
+        android:textAppearance="@style/register"
+        />
+
+</RelativeLayout>

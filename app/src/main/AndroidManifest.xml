@@ -12,6 +12,33 @@
         android:theme="@style/Theme.Elective_"
         tools:targetApi="31">
         <activity
+            android:name=".adminforgetpassword"
+            android:exported="false" />
+        <activity
+            android:name=".teacherregistrationfirst"
+            android:exported="false" />
+        <activity
+            android:name=".teacher_registration"
+            android:exported="false" />
+        <activity
+            android:name=".admin_registration"
+            android:exported="false" />
+        <activity
+            android:name=".teacherlogin"
+            android:exported="false" />
+        <activity
+            android:name=".adminlogin"
+            android:exported="false" />
+        <activity
+            android:name=".student_registration"
+            android:exported="false" />
+        <activity
+            android:name=".studentregistrationconfirm"
+            android:exported="false" />
+        <activity
+            android:name=".student_login"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -20,12 +47,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".student_login"
-            android:exported="false">
-        </activity>
-
     </application>
 
 </manifest>

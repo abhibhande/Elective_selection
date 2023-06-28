@@ -55,7 +55,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/student"
+        android:id="@+id/choice"
         android:layout_width="117dp"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/as"
