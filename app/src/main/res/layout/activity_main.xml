@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="280dp"
+    android:id="@+id/welcome"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="55dp"
+    android:src="@drawable/img"
+    />
+
+    <TextView
+        android:id="@+id/create_an_a"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:layout_alignBottom="@+id/welcome"
+        android:text="Create an Account and Access Your\nCollage Resources"
+        android:textAppearance="@style/create_an_a"
+        android:gravity="center_horizontal|center_vertical"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/getting_started"
+        android:layout_width="226dp"
+        android:layout_height="50dp"
+        android:foregroundGravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="200sp"
+        android:layout_alignParentBottom="true"
+        android:text="Getting Started"
+        android:textAppearance="@style/getting_sta"
+        android:gravity="center"
+        android:background="@drawable/rectangle_2"
+        />
+
+    <TextView
+        android:id="@+id/as"
+        android:layout_width="71dp"
+        android:layout_height="20dp"
+        android:layout_alignTop="@+id/getting_started"
+        android:layout_marginVertical="55sp"
+        android:textSize="15sp"
+        android:text="as"
+        android:textAppearance="@style/as"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_centerHorizontal="true"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/choice"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/as"
+        android:layout_marginTop="35dp"
+        android:text="Student"
+
+        android:textAppearance="@style/student"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rectangle_4"
+        android:gravity="center_horizontal|center_vertical"
+        />
+
+</RelativeLayout>

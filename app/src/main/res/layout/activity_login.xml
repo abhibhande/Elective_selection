@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".student_login"
+    android:background="@drawable/studentimg"
+    >
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/welcome"
+        android:layout_marginTop="80sp"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/first"
+        android:layout_width="300sp"
+        android:layout_alignTop="@+id/welcome"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        app:hintEnabled="false"
+        app:boxBackgroundMode="none"
+
+        >
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="300sp"
+        android:layout_height="45sp"
+        android:padding="10dp"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:drawableStart="@drawable/baseline_alternate_email_24"
+        android:drawablePadding="10dp"
+        android:hint="Email"
+        android:textSize="23dp"
+        android:background="@drawable/edit"
+        />
+
+    </com.google.android.material.textfield.TextInputLayout>
+<!--    Password Field-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pass"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        android:layout_alignTop="@+id/first"
+        android:layout_marginTop="95dp"
+        app:hintEnabled="false"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/pass"
+        app:boxBackgroundMode="none"
+        >
+
+    <EditText
+        android:layout_width="300sp"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:drawableStart="@drawable/baseline_lock_24"
+        app:passwordToggleEnabled="true"
+        android:drawablePadding="5dp"
+        android:hint="Password"
+        android:textSize="23dp"
+        />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/pass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100sp"
+        android:background="@drawable/rectangle_2"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Login"
+        android:textAppearance="@style/getting_sta"
+        android:textColor="@color/black"
+        android:textSize="28dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@id/forgetpassword"
+        android:layout_alignTop="@+id/login"
+        android:layout_marginTop="85sp"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:background="@drawable/forget"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="@style/forget"
+        android:text="Forget Passoword"
+        android:gravity="center"
+        />
+
+    <View
+        android:layout_alignTop="@+id/forgetpassword"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:layout_height="4dp"
+        android:background="@drawable/line"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignTop="@+id/forgetpassword"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/registernew"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/registerhere"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/forgetpassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100sp"
+
+        android:background="@drawable/rectangle_2"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Register Here"
+        android:textAppearance="@style/register"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".student_registration"
+    android:background="@drawable/studentimg"
+    >
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/studentwelcome"
+        android:layout_marginTop="80sp"
+        />
+
+
+    <EditText
+        android:id="@+id/selectcollagename"
+        android:layout_width="300sp"
+        android:layout_height="45sp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:inputType="text"
+        android:singleLine="true"
+        android:drawableStart="@drawable/baseline_school_24"
+        android:drawablePadding="10dp"
+        android:layout_alignTop="@+id/welcome"
+        android:hint="Select Collage Name"
+        android:textSize="23dp"
+        android:background="@drawable/edit"
+        />
+
+    <EditText
+        android:id="@+id/selectbranch"
+        android:layout_width="300sp"
+        android:layout_height="45sp"
+        android:layout_marginTop="120dp"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:inputType="text"
+        android:singleLine="true"
+        android:drawableStart="@drawable/baseline_engineering_24"
+        android:drawablePadding="10dp"
+        android:layout_alignTop="@+id/selectcollagename"
+        android:hint="Select Branch"
+        android:textSize="23dp"
+        android:background="@drawable/edit"
+        />
+
+
+
+    <EditText
+        android:id="@+id/enteryear"
+        android:layout_width="300sp"
+        android:layout_height="45sp"
+        android:padding="10dp"
+        android:layout_marginTop="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/selectbranch"
+        android:inputType="number"
+        android:singleLine="true"
+        android:drawableStart="@drawable/baseline_calendar_month_24"
+        android:drawablePadding="10dp"
+        android:hint="Enter Year"
+        android:textSize="23dp"
+        android:background="@drawable/edit"
+        />
+
+    <EditText
+        android:id="@+id/enterstudentid"
+        android:layout_width="300sp"
+        android:layout_height="45sp"
+        android:layout_marginTop="120dp"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:inputType="text"
+        android:singleLine="true"
+        android:drawableStart="@drawable/baseline_format_list_numbered_rtl_24"
+        android:drawablePadding="10dp"
+        android:layout_alignTop="@+id/enteryear"
+        android:hint="Enter Student ID"
+        android:textSize="23dp"
+        android:background="@drawable/edit"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/next"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/enterstudentid"
+        android:layout_marginBottom="-80sp"
+        android:layout_centerHorizontal="true"
+
+
+        android:background="@drawable/rectangle_2"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Next"
+        android:textAppearance="@style/register"
+        />
+
+</RelativeLayout>

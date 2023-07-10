@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".student_registration"
+    android:background="@drawable/teacherimg"
+    >
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/teacherwelcome"
+        android:layout_marginTop="80sp"
+        />
+
+<!--    <AutoCompleteTextView-->
+<!--        android:id="@+id/selectcollagename"-->
+<!--        android:layout_width="300sp"-->
+<!--        android:layout_height="45sp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:padding="10dp"-->
+<!--        android:inputType="text"-->
+<!--        android:singleLine="true"-->
+<!--        android:drawableStart="@drawable/baseline_school_24"-->
+<!--        android:drawablePadding="10dp"-->
+<!--        android:layout_alignTop="@+id/welcome"-->
+<!--        android:hint="Select Collage Name"-->
+<!--        android:textSize="23dp"-->
+<!--        android:background="@drawable/edit"-->
+<!--        />-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/selectcollagename"
+        android:layout_width="300sp"
+        android:layout_height="45sp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/welcome"
+       app:hintEnabled="false"
+        app:boxBackgroundMode="outline"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        >
+
+
+        <AutoCompleteTextView
+        android:id="@+id/Select_Category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="none"
+            android:hint="Select Collage"
+            android:drawableStart="@drawable/baseline_school_24"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:textSize="23dp"
+            android:singleLine="true"
+            android:background="@drawable/edit"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/enterteacherid"
+        android:layout_width="300sp"
+        android:layout_height="45sp"
+        android:layout_marginTop="120dp"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:inputType="text"
+        android:singleLine="true"
+        android:drawableStart="@drawable/baseline_format_list_numbered_rtl_24"
+        android:drawablePadding="10dp"
+        android:layout_alignTop="@+id/selectcollagename"
+        android:hint="Enter Teacher ID"
+        android:textSize="23dp"
+        android:background="@drawable/edit"
+        />
+
+    <EditText
+        android:id="@+id/enterteachername"
+        android:layout_width="300sp"
+        android:layout_height="45sp"
+        android:layout_marginTop="120dp"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:inputType="text"
+        android:singleLine="true"
+        android:drawableStart="@drawable/baseline_school_24"
+        android:drawablePadding="10dp"
+        android:layout_alignTop="@+id/enterteacherid"
+        android:hint="Enter Teacher Name"
+        android:textSize="23dp"
+        android:background="@drawable/edit"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/next1"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/enterteachername"
+        android:layout_marginBottom="-120sp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rectangle_2"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Next"
+        android:textAppearance="@style/register"
+        />
+
+</RelativeLayout>
