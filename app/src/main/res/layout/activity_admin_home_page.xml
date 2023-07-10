@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin_home_page">
+
+    <RelativeLayout
+        android:id="@+id/first"
+        android:layout_width="match_parent"
+        android:layout_height="95sp"
+        android:background="@drawable/top"
+        >
+        <TextView
+            android:id="@+id/collage_name"
+            android:layout_width="275sp"
+            android:layout_height="wrap_content"
+            android:text="Pimpri Chinchwad Collage Of Engineering pune"
+            android:paddingLeft="10sp"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/reemkufi_medium"
+            android:textAppearance="@style/collage_name"
+
+            />
+        <ImageButton
+            android:id="@+id/login"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10sp"
+            android:src="@drawable/admin_logo"
+            android:background="@android:color/transparent"
+
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="115sp"
+        android:background="@drawable/bottom"
+        >
+
+        <RelativeLayout
+            android:id="@+id/branch"
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15sp"
+            android:layout_marginTop="15sp"
+            android:layout_marginEnd="15sp"
+            android:layout_marginBottom="15sp"
+            android:background="@drawable/frame_7"
+            android:clickable="true"
+            >
+
+            <TextView
+                android:id="@+id/branch_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="45sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:text="0"
+                android:textAppearance="@style/count" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_alignTop="@+id/branch_count"
+                android:layout_marginLeft="45sp"
+                android:layout_marginTop="40sp"
+                android:text="Total Branches"
+                android:textAppearance="@style/create_an_a"
+                android:textSize="10sp" />
+
+            <ImageButton
+                android:id="@+id/add_branch"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/baseline_add_circle_outline_24" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25sp"
+                android:background="@drawable/teamwork"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/teacher"
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:layout_alignTop="@+id/branch"
+            android:layout_marginStart="15sp"
+            android:layout_marginTop="115sp"
+            android:layout_marginEnd="15sp"
+            android:layout_marginBottom="15sp"
+            android:background="@drawable/frame_7"
+            android:clickable="true"
+            >
+
+            <TextView
+                android:id="@+id/teacher_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="45sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:text="0"
+                android:textAppearance="@style/count" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_alignTop="@+id/teacher_count"
+                android:layout_marginLeft="45sp"
+                android:layout_marginTop="40sp"
+                android:text="Total Teacher"
+                android:textAppearance="@style/create_an_a"
+                android:textSize="10sp" />
+
+            <ImageButton
+                android:id="@+id/add_teacher"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/baseline_add_circle_outline_24" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25sp"
+                android:background="@drawable/teacher_logo"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/elective"
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:layout_alignTop="@+id/teacher"
+            android:layout_marginStart="15sp"
+            android:layout_marginTop="115sp"
+            android:layout_marginEnd="15sp"
+            android:layout_marginBottom="15sp"
+            android:background="@drawable/frame_7"
+            android:clickable="true"
+            >
+
+            <TextView
+                android:id="@+id/elective_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="45sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:text="0"
+                android:textAppearance="@style/count" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_alignTop="@+id/elective_count"
+                android:layout_marginLeft="45sp"
+                android:layout_marginTop="40sp"
+                android:text="Total Elective"
+                android:textAppearance="@style/create_an_a"
+                android:textSize="10sp" />
+
+            <ImageButton
+                android:id="@+id/add_elective"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/baseline_add_circle_outline_24" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25sp"
+                android:background="@drawable/elective_logo"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/student"
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:layout_alignTop="@+id/elective"
+            android:layout_marginStart="15sp"
+            android:layout_marginTop="115sp"
+            android:layout_marginEnd="15sp"
+            android:layout_marginBottom="15sp"
+            android:background="@drawable/frame_7"
+            android:clickable="true"
+            >
+
+            <TextView
+                android:id="@+id/student_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="45sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:text="0"
+                android:textAppearance="@style/count" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_alignTop="@+id/student_count"
+                android:layout_marginLeft="45sp"
+                android:layout_marginTop="40sp"
+                android:text="Total Students"
+                android:textAppearance="@style/create_an_a"
+                android:textSize="10sp" />
+
+            <ImageButton
+                android:id="@+id/add_student"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/baseline_add_circle_outline_24" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25sp"
+                android:background="@drawable/student_logo"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

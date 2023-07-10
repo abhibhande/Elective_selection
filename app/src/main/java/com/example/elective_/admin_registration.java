@@ -99,8 +99,9 @@ public class admin_registration extends AppCompatActivity {
 
                                         finish();
                                         //Going back to Login Acativity
-                                        startActivity(new Intent(getApplicationContext(),adminlogin.class));
-
+                                        Intent intent=new Intent(getApplicationContext(),adminlogin.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        startActivity(intent);
                                     }
                                 }
                             }).addOnFailureListener(new OnFailureListener() {

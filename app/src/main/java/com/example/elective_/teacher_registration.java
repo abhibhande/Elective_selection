@@ -42,7 +42,7 @@ public class teacher_registration extends AppCompatActivity {
         auth=FirebaseAuth.getInstance();
         firestore=FirebaseFirestore.getInstance();
 
-        EditText collagename=(EditText) findViewById(R.id.entermobileno);
+        EditText mobileno=(EditText) findViewById(R.id.entermobileno);
         EditText email=(EditText) findViewById(R.id.enteremail);
         EditText password=(EditText) findViewById(R.id.enterpassword);
         EditText confirmpassword=(EditText) findViewById(R.id.enterConfirmpassword);
@@ -61,19 +61,19 @@ public class teacher_registration extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String cname=collagename.getText().toString();
+                String mobno=mobileno.getText().toString();
                 String mail=email.getText().toString();
                 String pass=password.getText().toString();
                 String cpass=confirmpassword.getText().toString();
                 //checking For Empty Field
-                if(!cname.isEmpty() || !mail.isEmpty() || !pass.isEmpty() || !cpass.isEmpty())
+                if(!mobno.isEmpty() || !mail.isEmpty() || !pass.isEmpty() || !cpass.isEmpty())
                 {
                     if(pass.matches(regex))
                     {
                         if (pass.equals(cpass)) {
                             check = true;
                             //Creating Admin Account
-                            auth.createUserWithEmailAndPassword(mail, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            auth.createUserWithEmailAndPassword(mail,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful())  {
@@ -84,22 +84,26 @@ public class teacher_registration extends AppCompatActivity {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if(task.isSuccessful())
-                                                    Toast.makeText(getApplicationContext(), "User Added\nVerify Your Email", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(getApplicationContext(), "Verify Your Email", Toast.LENGTH_SHORT).show();
                                             }
                                         });
 
-                                        //Addind Details
-                                        Map<String,String> admin=new HashMap<>();
-                                        admin.put("ID",auth.getUid());
-                                        admin.put("Access","ADMIN");
-                                        admin.put("Collage Name",cname);
 
-                                        //Uploading Collage and admin Details
-                                        firestore.collection("ADMIN").add(admin);
+                                        //Uploading Teacher Details
+                                        firestore.collection("TEACHER").document(Check_Class.TeacherId+":"+Check_Class.CollageName).update(
+                                                "ASSIGNED","YES",
+                                                "ID",auth.getUid(),
+                                                "Access","TEACHER",
+                                                "Teacher Name",Check_Class.TeacharName,
+                                                "Mobile No",mobno
+                                        );
+//
 
                                         finish();
                                         //Going back to Login Acativity
-                                        startActivity(new Intent(getApplicationContext(),adminlogin.class));
+                                        Intent intent=new Intent(new Intent(getApplicationContext(),teacherlogin.class));
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        startActivity(intent);
 
                                     }
                                 }

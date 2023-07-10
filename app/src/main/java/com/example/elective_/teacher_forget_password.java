@@ -12,16 +12,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class adminforgetpassword extends AppCompatActivity {
+public class teacher_forget_password extends AppCompatActivity {
 
     FirebaseAuth auth;
     FirebaseFirestore firestore;
@@ -35,13 +30,14 @@ public class adminforgetpassword extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adminforgetpassword);
+        setContentView(R.layout.activity_teacher_forget_password);
+
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
 
 
-        auth=FirebaseAuth.getInstance();
-        firestore=FirebaseFirestore.getInstance();
+        auth= FirebaseAuth.getInstance();
+        firestore= FirebaseFirestore.getInstance();
 
         EditText email=(EditText) findViewById(R.id.enteremail);
         Button resetpassword=(Button) findViewById(R.id.resetpassword);
@@ -55,14 +51,16 @@ public class adminforgetpassword extends AppCompatActivity {
                 //checking For Empty Field
                 if(!mail.isEmpty())
                 {
+
                     auth.sendPasswordResetEmail(mail).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful())
                             {
-                                Toast.makeText(adminforgetpassword.this, "Reset Password Link Sent", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Reset Password Link Sent", Toast.LENGTH_SHORT).show();
                                 finish();
-                                startActivity(new Intent(getApplicationContext(),adminlogin.class));
+
+                                startActivity(new Intent(getApplicationContext(),teacherlogin.class));
                             }
                         }
                     });

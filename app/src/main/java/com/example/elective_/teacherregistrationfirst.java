@@ -14,7 +14,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -83,11 +86,47 @@ public class teacherregistrationfirst extends AppCompatActivity {
                     teachername.setError("Enter Teacher Name");
                 }
                 else {
-                    Check_Class.CollageName=collage_name;
-                    Check_Class.TeacherId=id;
-                    Check_Class.TeacharName=name;
+                    //Checking Teacher ID Exist Or not in Perticular Collage If Exist Then Go to Next Page
+                    firestore.collection("TEACHER").document(id+":"+collage_name).get()
+                            .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                    if(task.isSuccessful()){
+                                        DocumentSnapshot result=task.getResult();
 
-                    startActivity(new Intent(getApplicationContext(), teacher_registration.class));
+//                                        String str=result.getString("Teacher ID");
+
+
+                                        if(result.exists() && result.getString("Collage Name").equals(collage_name))
+                                        {
+                                            if(result.getString("ASSIGNED").equals("NOT"))
+                                            {
+                                                Toast.makeText(teacherregistrationfirst.this, "ID Exists", Toast.LENGTH_SHORT).show();
+                                                Check_Class.CollageName=collage_name;
+                                                Check_Class.TeacherId=id;
+                                                Check_Class.TeacharName=name;
+                                                startActivity(new Intent(getApplicationContext(), teacher_registration.class));
+                                            }
+                                            else {
+                                                teacherid.setError("ID Already Exists");
+                                            }
+
+                                        }
+                                        else {
+                                            Toast.makeText(teacherregistrationfirst.this, "Not Exists", Toast.LENGTH_SHORT).show();
+                                            teacherid.setError("ID Not Exists");
+                                        }
+                                    }
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(teacherregistrationfirst.this, "Error:"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+
                 }
             }
         });

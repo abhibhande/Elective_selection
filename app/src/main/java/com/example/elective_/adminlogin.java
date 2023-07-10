@@ -4,29 +4,24 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import org.w3c.dom.Document;
+import java.util.List;
 
 public class adminlogin extends AppCompatActivity {
 
@@ -56,11 +51,18 @@ public class adminlogin extends AppCompatActivity {
 
         Button forgetpassword=(Button)findViewById(R.id.forgetpassword);
 
+        //Saving User Login
+        SharedPreferences sp=getSharedPreferences("DETAILS",MODE_PRIVATE);
+
+
         //Forget Password
         forgetpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),adminforgetpassword.class));
+                Intent intent=new Intent(getApplicationContext(), com.example.elective_.forgetpassword.class);
+                intent.putExtra("Access","ADMIN");
+
+                startActivity(intent);
             }
         });
 
@@ -78,6 +80,7 @@ public class adminlogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Toast.makeText(getApplicationContext(),"Wait",Toast.LENGTH_SHORT);
                 String mail=email.getText().toString();
                 String pass=password.getText().toString();
 
@@ -110,21 +113,34 @@ public class adminlogin extends AppCompatActivity {
                                                     @Override
                                                     public void onComplete(@NonNull Task<QuerySnapshot> task2) {
                                                         if (task2.isSuccessful()) {
-                                                            //Checking Valid Access="ADMIN"
+                                                            //Getting User Email Details
                                                             QuerySnapshot documentSnapshot = task2.getResult();
+                                                            //Verifing Admin email is verified or not
                                                             if (!documentSnapshot.isEmpty()) {
-                                                                //Verifing Admin email is verified or not
-                                                                if(auth.getCurrentUser().isEmailVerified()) {
 
+                                                                if(auth.getCurrentUser().isEmailVerified()) {
                                                                     Toast.makeText(adminlogin.this, "Successfully Login", Toast.LENGTH_SHORT).show();
+                                                                    //User Successfully Login Then saving user details for further login
+
+                                                                    SharedPreferences.Editor Details=sp.edit();
+
+                                                                    List<DocumentSnapshot> list=documentSnapshot.getDocuments();
+                                                                    for(DocumentSnapshot documentSnapshot1:list)
+                                                                    {
+
+                                                                        Details.putString("Collage Name",documentSnapshot1.getString("Collage Name"));
+//                                                                        Check_Class.CollageName=documentSnapshot1.getString("Collage Name");
+                                                                        Toast.makeText(adminlogin.this, documentSnapshot1.getString("Collage Name"), Toast.LENGTH_SHORT).show();
+                                                                    }
+                                                                    Details.apply();
+
+//                                                                    finish();
+                                                                    startActivity(new Intent(getApplicationContext(),admin_home_page.class));
                                                                 }
                                                                 else {
                                                                     email.setError("Please Verify Email");
                                                                 }
 
-                                                                for (QueryDocumentSnapshot document : task2.getResult()) {
-                                                                    Toast.makeText(getApplicationContext(), "Access:" + document.getString("Access"), Toast.LENGTH_SHORT).show();
-                                                                }
 
                                                             }
                                                             else {

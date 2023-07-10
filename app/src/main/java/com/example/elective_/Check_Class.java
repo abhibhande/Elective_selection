@@ -26,4 +26,14 @@ public class Check_Class{
     public static String TeacherId;
     public static String TeacharName;
 
+    public static String StudentName;
+    public static String StudentId;
+
+    public static String Branch;
+
+    public static String MobileNo;
+    public static String Year;
+
+    public static String Access;
+
 }
