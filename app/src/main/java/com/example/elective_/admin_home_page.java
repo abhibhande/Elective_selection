@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +46,7 @@ public class admin_home_page extends AppCompatActivity {
 
         TextView collagename=(TextView) findViewById(R.id.collage_name);
         collagename.setText(sh.getString("Collage Name",null));
+        ImageButton login=(ImageButton)findViewById(R.id.login);
 
         RelativeLayout branch=(RelativeLayout) findViewById(R.id.branch);
         RelativeLayout teacher=(RelativeLayout) findViewById(R.id.teacher);
@@ -63,6 +67,7 @@ public class admin_home_page extends AppCompatActivity {
         branch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 if (!branch_count.getText().toString().equals(0))
                 {
                     Intent i=new Intent(getApplicationContext(),all_branch.class);
@@ -72,14 +77,18 @@ public class admin_home_page extends AppCompatActivity {
             }
         });
 
+
+
         //adding new branches
         add_branch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 finish();
-                startActivity(new Intent(getApplicationContext(),add_branch.class));
-                Toast.makeText(admin_home_page.this, "add_Branch", Toast.LENGTH_SHORT).show();
+
+                Intent i=new Intent(getApplicationContext(),add_branch.class);
+                i.putExtra("Access","ADMIN");
+                startActivity(i);
             }
         });
 
@@ -103,7 +112,10 @@ public class admin_home_page extends AppCompatActivity {
         teacher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(admin_home_page.this, "Teacher", Toast.LENGTH_SHORT).show();
+                finish();
+                Intent i=new Intent(getApplicationContext(),all_teacher.class);
+                i.putExtra("Access","ADMIN");
+                startActivity(i);
             }
         });
 
@@ -111,6 +123,7 @@ public class admin_home_page extends AppCompatActivity {
         add_teacher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                i.putExtra("Access","ADMIN");
                 Toast.makeText(admin_home_page.this, "add_Teacher", Toast.LENGTH_SHORT).show();
             }
         });
@@ -214,6 +227,27 @@ public class admin_home_page extends AppCompatActivity {
                     }
                 });
 
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popupMenu=new PopupMenu(getApplicationContext(),login);
+
+                popupMenu.getMenuInflater().inflate(R.menu.admin_menu,popupMenu.getMenu());
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+
+                            SharedPreferences.Editor editor=sh.edit();
+                            editor.clear();
+                            editor.apply();
+                            finish();
+                            startActivity(new Intent(getApplicationContext(),adminlogin.class));
+                        return true;
+                    }
+                });
+                popupMenu.show();
+            }
+        });
 
     }
 }

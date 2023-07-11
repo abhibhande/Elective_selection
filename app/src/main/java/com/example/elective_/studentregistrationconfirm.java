@@ -96,7 +96,8 @@ public class studentregistrationconfirm extends AppCompatActivity {
                                                 "Name",studentname,
                                                 "Mobile No",mobileno,
                                                 "ASSIGNED","YES",
-                                                "Year",Check_Class.Year
+                                                "Year",Check_Class.Year,
+                                                "Email",mail
                                         ).addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void unused) {

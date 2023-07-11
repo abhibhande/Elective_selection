@@ -38,8 +38,6 @@ public class adminlogin extends AppCompatActivity {
         auth=FirebaseAuth.getInstance();
         firestore=FirebaseFirestore.getInstance();
 
-        //for Setting Progress Bar
-
 
         //For Getting Inputs
         EditText email=(EditText)findViewById(R.id.email);
@@ -134,7 +132,7 @@ public class adminlogin extends AppCompatActivity {
                                                                     }
                                                                     Details.apply();
 
-//                                                                    finish();
+                                                                    finish();
                                                                     startActivity(new Intent(getApplicationContext(),admin_home_page.class));
                                                                 }
                                                                 else {

@@ -95,7 +95,8 @@ public class teacher_registration extends AppCompatActivity {
                                                 "ID",auth.getUid(),
                                                 "Access","TEACHER",
                                                 "Teacher Name",Check_Class.TeacharName,
-                                                "Mobile No",mobno
+                                                "Mobile No",mobno,
+                                                "Email",mail
                                         );
 //
 

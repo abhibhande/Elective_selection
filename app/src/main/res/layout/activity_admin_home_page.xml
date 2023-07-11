@@ -58,6 +58,7 @@
             android:clickable="true"
             >
 
+
             <TextView
                 android:id="@+id/branch_count"
                 android:layout_width="wrap_content"

@@ -93,6 +93,7 @@ public class admin_registration extends AppCompatActivity {
                                         admin.put("ID",auth.getUid());
                                         admin.put("Access","ADMIN");
                                         admin.put("Collage Name",cname);
+                                        admin.put("Email",mail);
 
                                         //Uploading Collage and admin Details
                                         firestore.collection("ADMIN").add(admin);

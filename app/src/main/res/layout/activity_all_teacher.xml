@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".all_teacher">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_marginStart="15sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="15sp"
+        android:layout_marginBottom="15sp"
+        android:background="@drawable/baseline_arrow_back_24" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="15sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginEnd="15sp"
+        android:layout_marginBottom="15sp"
+        android:fontFamily="@font/robotocondensed_light"
+        android:text="All Teacher"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:id="@+id/main_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="65sp"
+        >
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/branch"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="140sp"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_marginStart="15sp"-->
+<!--                android:layout_marginTop="15sp"-->
+<!--                android:layout_marginEnd="15sp"-->
+<!--                android:layout_marginBottom="7sp"-->
+<!--                android:background="@drawable/frame_7"-->
+<!--                android:clickable="true"-->
+<!--                >-->
+
+
+
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="15sp"-->
+<!--                    android:layout_marginTop="10sp"-->
+<!--                    android:text="ID"-->
+<!--                    android:textAppearance="@style/create_an_a"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/ID"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="120sp"-->
+<!--                    android:layout_marginTop="10sp"-->
+<!--                    android:text=": 122B2B277"-->
+<!--                    android:textAppearance="@style/create_an_a"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="15sp"-->
+<!--                    android:layout_marginTop="40sp"-->
+<!--                    android:text="Name"-->
+<!--                    android:textAppearance="@style/create_an_a"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/name"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="120sp"-->
+<!--                    android:layout_marginTop="40sp"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:text=": Abhishek Vijaykumar Bhande"-->
+<!--                    android:textAppearance="@style/create_an_a"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="15sp"-->
+<!--                    android:layout_marginTop="70sp"-->
+<!--                    android:text="Email"-->
+<!--                    android:textAppearance="@style/create_an_a"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/email"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="120sp"-->
+<!--                    android:layout_marginTop="70sp"-->
+<!--                    android:text=": xyzabc@gmail.com"-->
+<!--                    android:textAppearance="@style/create_an_a"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="15sp"-->
+<!--                    android:layout_marginTop="100sp"-->
+<!--                    android:text="Mobile No"-->
+<!--                    android:textAppearance="@style/create_an_a"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/mobile_no"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="120sp"-->
+<!--                    android:layout_marginTop="100sp"-->
+<!--                    android:text=": 9764567800"-->
+<!--                    android:textAppearance="@style/create_an_a"-->
+<!--                    android:textSize="20sp" />-->
+
+
+<!--            </RelativeLayout>-->
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

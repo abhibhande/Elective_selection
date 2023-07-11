@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -27,13 +28,14 @@ public class add_branch extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_branch);
-
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
 
         firestore=FirebaseFirestore.getInstance();
         EditText Branch=(EditText) findViewById(R.id.branch);
         ImageButton back=(ImageButton) findViewById(R.id.back);
         Button add=(Button)findViewById(R.id.add_branch);
-
+        Branch.setAllCaps(true);
         SharedPreferences sp=getSharedPreferences("DETAILS",MODE_PRIVATE);
 
         //Checking which user is calling this page
@@ -61,6 +63,7 @@ public class add_branch extends AppCompatActivity {
                                     if(task.isSuccessful())
                                     {
                                         Toast.makeText(add_branch.this, "Branch Added", Toast.LENGTH_SHORT).show();
+                                        Branch.setText("");
                                     }
                                 }
                             })
