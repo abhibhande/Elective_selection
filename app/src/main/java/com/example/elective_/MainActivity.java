@@ -99,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
                     Intent i=new Intent(getApplicationContext(), student_login.class);
                     startActivity(i);
                 } else if (choice.getText().equals("Admin")) {
-                    Intent i=new Intent(getApplicationContext(),adminlogin.class);
+//                    Intent i=new Intent(getApplicationContext(),adminlogin.class);
+                    Intent i=new Intent(getApplicationContext(),all_elective.class);
                     startActivity(i);
 
                 } else if (choice.getText().equals("Teacher")) {

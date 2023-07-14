@@ -18,6 +18,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class add_branch extends AppCompatActivity {
 
@@ -55,9 +59,12 @@ public class add_branch extends AppCompatActivity {
                     Branch.setError("Enter Branch");
                 }
                 else {
+                    Map<String,String > b=new HashMap<>();
+                    b.put(branch,branch);
                     firestore.collection("BRANCH")
                             .document("BRANCH:"+sp.getString("Collage Name",null))
-                            .update(branch,branch).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            .set(b, SetOptions.merge()).
+                            addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful())
@@ -70,7 +77,7 @@ public class add_branch extends AppCompatActivity {
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(add_branch.this, "Error", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(add_branch.this, "Error"+e.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             });
                 }

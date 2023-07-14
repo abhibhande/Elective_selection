@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".student_profile">
+
+    <RelativeLayout
+        android:id="@+id/first"
+        android:layout_width="match_parent"
+        android:layout_height="95sp"
+        android:background="@drawable/top"
+        >
+        <TextView
+            android:id="@+id/collage_name"
+            android:layout_width="275sp"
+            android:layout_height="wrap_content"
+            android:text="collage name"
+            android:paddingLeft="10sp"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/reemkufi_medium"
+            android:textAppearance="@style/collage_name"
+
+            />
+        <ImageButton
+            android:id="@+id/login"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10sp"
+            android:src="@drawable/admin_logo"
+            android:background="@android:color/transparent"
+
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="115sp"
+        android:background="@drawable/bottom"
+        >
+
+        <RelativeLayout
+            android:id="@+id/top_relative"
+            android:layout_width="match_parent"
+            android:layout_height="500sp"
+            android:layout_marginStart="15sp"
+            android:layout_marginTop="15sp"
+            android:layout_marginEnd="15sp"
+            android:layout_marginBottom="15sp"
+            android:background="@drawable/frame_8">
+
+
+            <TextView
+                android:id="@+id/studentdetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:gravity="center"
+                android:text="Student Details"
+                android:textAppearance="@style/collage_name"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40sp"
+                android:layout_marginTop="70sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:gravity="center"
+                android:text="Student ID"
+                android:textAppearance="@style/collage_name_small" />
+
+            <EditText
+                android:id="@+id/id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="80sp"
+                android:background="@android:color/transparent"
+                android:enabled="false"
+                android:fontFamily="@font/reemkufi_medium"
+                android:text="Teacher1234"
+                android:textAppearance="@style/collage_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40sp"
+                android:layout_marginTop="110sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:gravity="center"
+                android:text="Name"
+                android:textAppearance="@style/collage_name_small" />
+
+            <EditText
+                android:id="@+id/name"
+                android:enabled="false"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="120sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:text="XYZ ABC POR"
+                android:textAppearance="@style/collage_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40sp"
+                android:layout_marginTop="160sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:gravity="center"
+                android:text="Branch Name"
+                android:textAppearance="@style/collage_name_small" />
+
+            <EditText
+                android:id="@+id/branch_name"
+                android:background="@android:color/transparent"
+                android:enabled="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="170sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:text="abhi@gmail.com"
+                android:textAppearance="@style/collage_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40sp"
+                android:layout_marginTop="210sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:gravity="center"
+                android:text="Year"
+                android:textAppearance="@style/collage_name_small" />
+
+            <EditText
+                android:id="@+id/year"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:enabled="false"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="220sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:gravity="center"
+                android:text="0000000000"
+                android:textAppearance="@style/collage_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40sp"
+                android:layout_marginTop="260sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:gravity="center"
+                android:text="Sem"
+                android:textAppearance="@style/collage_name_small" />
+
+            <EditText
+                android:id="@+id/sem"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:enabled="false"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="270sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:gravity="center"
+                android:text="0000000000"
+                android:textAppearance="@style/collage_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40sp"
+                android:layout_marginTop="310sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:gravity="center"
+                android:text="Email"
+                android:textAppearance="@style/collage_name_small" />
+
+            <EditText
+                android:id="@+id/email"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:enabled="false"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="320sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:gravity="center"
+                android:text="0000000000"
+                android:textAppearance="@style/collage_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40sp"
+                android:layout_marginTop="360sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:gravity="center"
+                android:text="Mobile No"
+                android:textAppearance="@style/collage_name_small" />
+
+            <EditText
+                android:id="@+id/mobile_no"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:enabled="false"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="370sp"
+                android:fontFamily="@font/reemkufi_medium"
+                android:gravity="center"
+                android:text="0000000000"
+                android:textAppearance="@style/collage_name" />
+
+
+        </RelativeLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/edit"
+            android:layout_width="117dp"
+            android:layout_height="41dp"
+            android:layout_alignBottom="@+id/top_relative"
+            android:layout_marginBottom="-80sp"
+            android:layout_centerHorizontal="true"
+            android:text="EDIT"
+            android:textAppearance="@style/edit"
+            android:background="@drawable/frame_9"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

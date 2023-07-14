@@ -96,6 +96,9 @@ public class admin_home_page extends AppCompatActivity {
         elective.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent i=new Intent(getApplicationContext(),all_elective.class);
+
+                startActivity(i);
                 Toast.makeText(admin_home_page.this, "Elective", Toast.LENGTH_SHORT).show();
             }
         });
@@ -123,8 +126,10 @@ public class admin_home_page extends AppCompatActivity {
         add_teacher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                i.putExtra("Access","ADMIN");
-                Toast.makeText(admin_home_page.this, "add_Teacher", Toast.LENGTH_SHORT).show();
+                finish();
+                Intent i=new Intent(getApplicationContext(), com.example.elective_.add_teacher.class);
+                i.putExtra("Access","ADMIN");
+                startActivity(i);
             }
         });
 

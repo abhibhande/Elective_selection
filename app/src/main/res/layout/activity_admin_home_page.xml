@@ -16,7 +16,7 @@
             android:id="@+id/collage_name"
             android:layout_width="275sp"
             android:layout_height="wrap_content"
-            android:text="Pimpri Chinchwad Collage Of Engineering pune"
+            android:text="Collage Name"
             android:paddingLeft="10sp"
             android:layout_centerVertical="true"
             android:fontFamily="@font/reemkufi_medium"

@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -79,6 +80,8 @@ public class all_teacher extends AppCompatActivity {
                                             RelativeLayout relativeLayout=new RelativeLayout(getApplicationContext());
                                             RelativeLayout.LayoutParams relativeParams= new RelativeLayout.LayoutParams(
                                                     RelativeLayout.LayoutParams.MATCH_PARENT, 450);
+                                            relativeLayout.setClickable(true);
+
 
                                             relativeParams.setMargins(53,16,53,14);
                                             relativeLayout.setBackground(getDrawable(R.drawable.frame_7));
@@ -92,7 +95,7 @@ public class all_teacher extends AppCompatActivity {
 
                                             //Adding Text Teacher ID
                                             TextView id=new TextView(getApplicationContext());
-                                            id.setText("Teacher ID");
+                                            id.setText("Teacher ID :");
                                             id.setTextAppearance(R.style.create_an_a);
                                             id.setTextSize(20);
                                             id.setLayoutParams(relativeParams1);
@@ -103,7 +106,9 @@ public class all_teacher extends AppCompatActivity {
                                                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                                         relativeParams2.setMargins(390,16,0,0);
                                             TextView id_=new TextView(getApplicationContext());
-                                            id_.setText(": "+br.get("Teacher ID").toString());
+                                            String s1;
+                                        s1=br.get("Teacher ID")!=null ? br.get("Teacher ID").toString() : "";
+                                        id_.setText(s1);
                                             id_.setTextAppearance(R.style.create_an_a);
                                             id_.setTextSize(20);
                                             id_.setLayoutParams(relativeParams2);
@@ -114,7 +119,7 @@ public class all_teacher extends AppCompatActivity {
                                                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                                         relativeParams3.setMargins(53,116,0,0);
                                         TextView name=new TextView(getApplicationContext());
-                                        name.setText("Name");
+                                        name.setText("Name         :");
                                         name.setTextAppearance(R.style.create_an_a);
                                         name.setTextSize(20);
                                         name.setLayoutParams(relativeParams3);
@@ -125,7 +130,8 @@ public class all_teacher extends AppCompatActivity {
                                                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                                         relativeParams4.setMargins(390,116,10,0);
                                         TextView name_=new TextView(getApplicationContext());
-                                        name_.setText(": "+br.get("Teacher Name").toString());
+                                        s1=br.get("Teacher Name")!=null ? br.get("Teacher Name").toString() : "";
+                                        name_.setText(s1);
                                         name_.setSingleLine();
                                         name_.setTextAppearance(R.style.create_an_a);
                                         name_.setTextSize(20);
@@ -138,7 +144,7 @@ public class all_teacher extends AppCompatActivity {
                                                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                                         relativeParams5.setMargins(53,216,0,0);
                                         TextView email=new TextView(getApplicationContext());
-                                        email.setText("Email");
+                                        email.setText("Email         :");
                                         email.setTextAppearance(R.style.create_an_a);
                                         email.setTextSize(20);
                                         email.setLayoutParams(relativeParams5);
@@ -149,7 +155,8 @@ public class all_teacher extends AppCompatActivity {
                                                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                                         relativeParams6.setMargins(390,216,10,0);
                                         TextView email_=new TextView(getApplicationContext());
-                                        email_.setText(": "+br.get("Email"));
+                                        s1=br.get("Email")!=null ? br.get("Email").toString() : "";
+                                        email_.setText(s1);
                                         email_.setTextAppearance(R.style.create_an_a);
                                         email_.setSingleLine();
                                         email_.setTextSize(20);
@@ -161,7 +168,7 @@ public class all_teacher extends AppCompatActivity {
                                                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                                         relativeParams7.setMargins(53,316,0,0);
                                         TextView no=new TextView(getApplicationContext());
-                                        no.setText("Mobile No");
+                                        no.setText("Mobile No :");
                                         no.setTextAppearance(R.style.create_an_a);
                                         no.setTextSize(20);
                                         no.setLayoutParams(relativeParams7);
@@ -172,7 +179,8 @@ public class all_teacher extends AppCompatActivity {
                                                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                                         relativeParams8.setMargins(390,316,0,0);
                                         TextView no_=new TextView(getApplicationContext());
-                                        no_.setText(": "+br.get("Mobile No").toString());
+                                        s1=br.get("Mobile No")!=null ? br.get("Mobile No").toString() : "";
+                                        no_.setText(s1);
                                         no_.setTextAppearance(R.style.create_an_a);
                                         no_.setTextSize(20);
                                         no_.setLayoutParams(relativeParams8);
@@ -191,6 +199,20 @@ public class all_teacher extends AppCompatActivity {
                                             i1.setBackground(getDrawable(R.drawable.baseline_3_dots));
                                             i1.setLayoutParams(relativeParamsi1);
                                             relativeLayout.addView(i1);
+
+                                        relativeLayout.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View view) {
+                                                Intent i=new Intent(getApplicationContext(),teacher_profile.class);
+                                                i.putExtra("ID",id_.getText().toString());
+                                                Check_Class.TeacherId=id_.getText().toString();
+                                                i.putExtra("Name",name_.getText().toString());
+                                                i.putExtra("Email",email_.getText().toString());
+                                                i.putExtra("Mobile No",no_.getText().toString());
+                                                startActivity(i);
+
+                                            }
+                                        });
                                             i1.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View view) {
@@ -198,16 +220,30 @@ public class all_teacher extends AppCompatActivity {
 
                                                     popupMenu.getMenuInflater().inflate(R.menu.delete_menu,popupMenu.getMenu());
                                                     popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+
                                                         @Override
                                                         public boolean onMenuItemClick(MenuItem menuItem) {
                                                             firestore.collection("TEACHER")
-                                                                    .document(id_.getText().toString()+ sp.getString("Collage Name",null))
+                                                                    .document(id_.getText().toString()+":"+ sp.getString("Collage Name",null))
                                                                     .delete()
                                                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                                                         @Override
                                                                         public void onComplete(@NonNull Task<Void> task) {
-                                                                            Toast.makeText(getApplicationContext(), id_.getText().toString()+" is Deleted", Toast.LENGTH_SHORT).show();
+                                                                            if(task.isSuccessful())
+                                                                            {
+                                                                                Toast.makeText(getApplicationContext(), id_.getText().toString()+" is Deleted", Toast.LENGTH_SHORT).show();
+
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                                                                            }
                                                                             recreate();
+                                                                        }
+                                                                    }).addOnFailureListener(new OnFailureListener() {
+                                                                        @Override
+                                                                        public void onFailure(@NonNull Exception e) {
+                                                                            Toast.makeText(getApplicationContext(), "Error"+e.getMessage(), Toast.LENGTH_SHORT).show();
                                                                         }
                                                                     });
                                                             return true;
